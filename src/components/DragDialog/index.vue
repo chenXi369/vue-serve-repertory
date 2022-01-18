@@ -80,9 +80,9 @@ export default {
 
 <style scoped>
 .reminderTitle {
-  padding-bottom: 16px;
+  padding-bottom: 10px;
 }
 .reminderFooter {
-  padding-top: 16px;
+  padding-top: 10px;
 }
 </style>
