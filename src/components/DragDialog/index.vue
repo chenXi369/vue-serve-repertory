@@ -10,16 +10,28 @@
   >
     <section style="padding: 0 20px">
       <p class="reminderTitle">{{ reminderTitle }}</p>
-      <p class="reminderContent" v-for="(item, index) in reminderContent" :key="index">
+      <p
+        class="reminderContent"
+        v-for="(item, index) in reminderContent"
+        :key="index"
+      >
         {{ item }}
       </p>
-      <p class="reminderFooter">{{reminderFooter}}</p>
+      <p class="reminderFooter">{{ reminderFooter }}</p>
     </section>
     <span slot="footer" class="dialog-footer">
-      <el-button type="primary" plain size="small" @click="confirmReminder"
+      <el-button
+        plain
+        type="primary"
+        size="small"
+        @click="confirmReminder"
         >确 认</el-button
       >
-      <el-button plain size="small" @click="cancelReminder">取 消</el-button>
+      <el-button
+        plain
+        size="small"
+        @click="cancelReminder"
+        >取 消</el-button>
     </span>
   </el-dialog>
 </template>
@@ -29,7 +41,7 @@ export default {
   props: {
     dialogTitle: {
       type: String,
-      default: "",
+      default: ''
     },
     reminderVisible: {
       type: Boolean,
@@ -37,36 +49,36 @@ export default {
     },
     reminderTitle: {
       type: String,
-      default: "",
+      default: ''
     },
     reminderFooter: {
       type: String,
-      default: "",
+      default: ''
     },
     reminderContent: {
       type: Array,
-      default: () => [],
-    },
+      default: () => []
+    }
   },
   data() {
-    return {};
+    return {}
   },
   methods: {
     // 确认
     confirmReminder() {
-      this.$emit("confirmReminder")
+      this.$emit('confirmReminder')
     },
     cancelReminder() {
-      this.$emit("closeReminder")
+      this.$emit('closeReminder')
     },
     handleCloseReminder() {
-      this.$emit("closeReminder")
+      this.$emit('closeReminder')
     }
-  },
-};
+  }
+}
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .reminderTitle {
   padding-bottom: 16px;
 }
