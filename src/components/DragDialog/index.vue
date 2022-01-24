@@ -9,15 +9,15 @@
     v-drag
   >
     <section style="padding: 0 20px">
-      <p class="reminderTitle">{{ reminderTitle }}</p>
-      <p
-        class="reminderContent"
-        v-for="(item, index) in reminderContent"
-        :key="index"
-      >
-        {{ item }}
-      </p>
-      <p class="reminderFooter">{{ reminderFooter }}</p>
+      <div class="reminderTitle">
+        <slot name='reminderTitle'></slot>
+      </div>
+      <div class="reminderContent">
+        <slot name="reminderContent"></slot>
+      </div>
+      <div class="reminderFooter">
+        <slot name="reminderFooter"></slot>
+      </div>
     </section>
     <span slot="footer" class="dialog-footer">
       <el-button
@@ -46,18 +46,6 @@ export default {
     reminderVisible: {
       type: Boolean,
       default: false
-    },
-    reminderTitle: {
-      type: String,
-      default: ''
-    },
-    reminderFooter: {
-      type: String,
-      default: ''
-    },
-    reminderContent: {
-      type: Array,
-      default: () => []
     }
   },
   data() {
@@ -80,9 +68,9 @@ export default {
 
 <style scoped>
 .reminderTitle {
-  padding-bottom: 10px;
+  padding: 15px 0px;
 }
 .reminderFooter {
-  padding-top: 10px;
+  padding: 15px 0px;
 }
 </style>
